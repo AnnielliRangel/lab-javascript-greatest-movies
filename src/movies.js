@@ -3,12 +3,7 @@
 // How could you "clean" a bit this array and make it unified (without duplicates)?
 const movies = require("./data.js");
 function getAllDirectors(moviesArray) {
-  // return moviesArray.map((element) => element.director);
-
-  const allDirectors = moviesArray.map((element) => {
-    return element.director;
-  });
-  return allDirectors;
+  return moviesArray.map((element) => element.director);
 }
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
@@ -21,24 +16,33 @@ function howManyMovies(moviesArray) {
     }
   });
   return stevenDrama.length;
-   howManyMovies(movies);
 }
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
 function scoresAverage(moviesArray) {
+  const soma = 0;
+  const media = 0;
   if (!moviesArray.length) {
     return 0;
+  } else {
+    return moviesArray.reduce((element) => element.score);
+    for (let i = 0; i < element.score.length; i++) {
+      soma += element.score[i];
+    }
+    media = soma / element.score.length;
   }
-  return moviesArray.reduce((element) => element.score);
-  const media = 0;
-  for (let i = 0; i < element.score.length; i++) {
-    media += element.score[i] / element.score[i].length;
-  }
-  return media[2];
+
+  return Math.round(media, 2);
 }
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
-function dramaMoviesScore(moviesArray) {}
+function dramaMoviesScore(moviesArray) {
+/*const mediaDrama = moviesArray.filter((element)=>{
+   if(element.genre==="Drama")
+
+ })*/
+ 
+}
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 function orderByYear(moviesArray) {}
