@@ -3,33 +3,39 @@
 // How could you "clean" a bit this array and make it unified (without duplicates)?
 const movies = require("./data.js");
 function getAllDirectors(moviesArray) {
-  
-    
   // return moviesArray.map((element) => element.director);
-  
+
   const allDirectors = moviesArray.map((element) => {
     return element.director;
   });
   return allDirectors;
-  getAllDirectors(movies);
 }
-
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
 function howManyMovies(moviesArray) {
   const stevenDrama = moviesArray.filter((element) => {
-    if (
-      element.director.incluedes("Steven Spielberg")  &&
-      element.genre[1].includes("Drama") 
-    ) {
-      return stevenDrama.length;
+    if (element.director !== "Steven Spielberg") {
+      return 0;
+    } else {
+      return element.genre.includes("Drama");
     }
-});
-console.log(howManyMovies(movies));
+  });
+  return stevenDrama.length;
+   howManyMovies(movies);
 }
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
-function scoresAverage(moviesArray) {}
+function scoresAverage(moviesArray) {
+  if (!moviesArray.length) {
+    return 0;
+  }
+  return moviesArray.reduce((element) => element.score);
+  const media = 0;
+  for (let i = 0; i < element.score.length; i++) {
+    media += element.score[i] / element.score[i].length;
+  }
+  return media[2];
+}
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 function dramaMoviesScore(moviesArray) {}
